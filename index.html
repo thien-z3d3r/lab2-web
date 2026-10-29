@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 2: Layouts & Responsive Design</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyBrand</div>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+    <nav id="navMenu" class="nav-links">
+      <a href="#exercise1">Exercise 1</a>
+      <a href="#exercise2">Exercise 2</a>
+      <a href="exercise1.html">Ex1 Page</a>
+      <a href="exercise2.html">Ex2 Page</a>
+    </nav>
+  </header>
+
+  <main class="main-wrapper">
+    <section id="exercise2" class="section-box">
+      <h2>Exercise 2: Interactive Mobile-First Navigation Menu</h2>
+      <p>The top navigation bar demonstrates mobile-first responsive design. Under 768px, the horizontal menu is hidden and the toggle button activates fluidly.</p>
+    </section>
+
+    <section id="exercise1" class="section-box">
+      <h2>Exercise 1: Two-Dimensional Image Gallery Layout</h2>
+      <p>CSS Grid layout with 4 items, 15px gap, and the first item spanning two column tracks.</p>
+      <div class="exercise-grid">
+        <div class="exercise-item item-1">
+          <img src="https://picsum.photos/seed/gallery1/800/400" alt="Item 1">
+          <div class="item-label">Item 1 (Spans 2 columns)</div>
+        </div>
+        <div class="exercise-item">
+          <img src="https://picsum.photos/seed/gallery2/400/400" alt="Item 2">
+          <div class="item-label">Item 2</div>
+        </div>
+        <div class="exercise-item">
+          <img src="https://picsum.photos/seed/gallery3/400/400" alt="Item 3">
+          <div class="item-label">Item 3</div>
+        </div>
+        <div class="exercise-item">
+          <img src="https://picsum.photos/seed/gallery4/400/400" alt="Item 4">
+          <div class="item-label">Item 4</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+  </script>
+</body>
+</html>

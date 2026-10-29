@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2: Mobile-First Navigation Menu</title>
+  <link rel="stylesheet" href="exercise2.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyBrand</div>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+    <nav id="navMenu" class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main class="page-content">
+    <div class="content-box">
+      <h1>Responsive Mobile-First Navigation</h1>
+      <p>Resize your browser below 768px to see the desktop navigation bar hide and the clean mobile menu toggle button appear. Click the button to toggle the menu smoothly.</p>
+    </div>
+  </main>
+  <script>
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+  </script>
+</body>
+</html>
