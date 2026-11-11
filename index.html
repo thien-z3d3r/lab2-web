@@ -11,20 +11,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <aside class="announcement-bar">
-    <div class="announcement-content">
-      <span class="badge-lab">Lab 2 Submission</span>
-      <span>Figma-to-Code Responsive Design</span>
-      <nav class="lab-links" aria-label="Lab Exercises">
-        <a href="exercise1.html">Exercise 1 (Grid Gallery)</a>
-        <span class="divider">/</span>
-        <a href="exercise2.html">Exercise 2 (Mobile Nav)</a>
-        <span class="divider">/</span>
-        <a href="exercise3.html">Exercise 3 (Portfolio)</a>
-      </nav>
-    </div>
-  </aside>
-
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="brand-logo" aria-label="VibeTech Home">
@@ -37,16 +23,6 @@
         <a href="#products" class="nav-link">Products</a>
         <a href="#deals" class="nav-link">Deals</a>
         <a href="#about" class="nav-link">About</a>
-        <div class="nav-dropdown">
-          <button class="nav-link dropdown-toggle" aria-expanded="false" id="dropdownBtn">
-            Exercises <span class="arrow-down">▾</span>
-          </button>
-          <div class="dropdown-menu">
-            <a href="exercise1.html">Exercise 1: 2D Grid Gallery</a>
-            <a href="exercise2.html">Exercise 2: Mobile Nav</a>
-            <a href="exercise3.html">Exercise 3: Portfolio Grid</a>
-          </div>
-        </div>
       </nav>
 
       <div class="nav-actions">
@@ -85,11 +61,6 @@
       <a href="#products" class="mobile-nav-link">Products</a>
       <a href="#deals" class="mobile-nav-link">Deals</a>
       <a href="#about" class="mobile-nav-link">About</a>
-      <div class="mobile-divider"></div>
-      <span class="mobile-section-title">Lab 2 Exercises</span>
-      <a href="exercise1.html" class="mobile-nav-link">Exercise 1: 2D Grid Gallery</a>
-      <a href="exercise2.html" class="mobile-nav-link">Exercise 2: Mobile Navigation</a>
-      <a href="exercise3.html" class="mobile-nav-link">Exercise 3: Portfolio Grid</a>
     </nav>
   </div>
 
@@ -451,7 +422,7 @@
             <span class="brand-name">Vibe<span class="brand-accent">Tech</span></span>
           </div>
           <p class="brand-bio">
-            Bridging the gap between Figma design systems and modern responsive web interfaces.
+            Premium workspace gear engineered to elevate daily productivity and creative flow.
           </p>
         </div>
         <div class="footer-links-group">
@@ -464,12 +435,12 @@
           </ul>
         </div>
         <div class="footer-links-group">
-          <h4>Lab 2 Exercises</h4>
+          <h4>Customer Care</h4>
           <ul>
-            <li><a href="exercise1.html">Exercise 1: 2D Gallery</a></li>
-            <li><a href="exercise2.html">Exercise 2: Mobile Nav</a></li>
-            <li><a href="exercise3.html">Exercise 3: Portfolio</a></li>
-            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="#about">Order Tracking</a></li>
+            <li><a href="#about">Warranty Claims</a></li>
+            <li><a href="#about">Return Policy</a></li>
+            <li><a href="#about">Contact Support</a></li>
           </ul>
         </div>
         <div class="footer-links-group">
@@ -482,9 +453,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 VibeTech. Designed for Web Development Practice.</p>
+        <p>&copy; 2026 VibeTech. All rights reserved.</p>
         <div class="footer-legal">
-          <span>Lab 2: Figma-to-Code &bull; Responsive CSS Grids</span>
+          <span>Modern Responsive Design &bull; CSS Grid & Flexbox</span>
         </div>
       </div>
     </div>
@@ -599,17 +570,6 @@
           mobileDrawer.classList.remove('open');
           mobileToggle.setAttribute('aria-expanded', 'false');
         });
-      });
-    }
-
-    const dropdownBtn = document.getElementById('dropdownBtn');
-    if (dropdownBtn) {
-      dropdownBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dropdownBtn.closest('.nav-dropdown').classList.toggle('active');
-      });
-      document.addEventListener('click', () => {
-        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
       });
     }
 
