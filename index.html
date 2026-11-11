@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VibeTech — Unleash the Next Level | Workspace Gear & Tech</title>
+  <title>VibeTech - Unleash the Next Level | Workspace Gear & Tech</title>
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Top Announcement Bar for Lab 2 Navigation -->
   <aside class="announcement-bar">
     <div class="announcement-content">
       <span class="badge-lab">Lab 2 Submission</span>
@@ -26,7 +25,6 @@
     </div>
   </aside>
 
-  <!-- Sticky Glassmorphic Navbar (Requirement 2) -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="brand-logo" aria-label="VibeTech Home">
@@ -34,7 +32,6 @@
         <span class="brand-name">Vibe<span class="brand-accent">Tech</span></span>
       </a>
 
-      <!-- Desktop Nav Links -->
       <nav class="nav-links" id="navLinks">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#products" class="nav-link">Products</a>
@@ -52,7 +49,6 @@
         </div>
       </nav>
 
-      <!-- Nav Utilities & Cart -->
       <div class="nav-actions">
         <div class="search-box">
           <svg class="action-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -71,7 +67,6 @@
           <span class="cart-badge" id="cartCount">0</span>
         </button>
 
-        <!-- Mobile Menu Toggle Button (Requirement 2 & 4) -->
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -81,7 +76,6 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
   <div class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-search">
       <input type="text" id="mobileSearchInput" placeholder="Search products..." aria-label="Mobile product search">
@@ -100,7 +94,6 @@
   </div>
 
   <main>
-    <!-- Hero Section -->
     <section class="hero-section" id="home">
       <div class="hero-container">
         <div class="hero-badge">
@@ -112,7 +105,6 @@
           Explore our curated collection of professional workspace gear, crafted to elevate your daily productivity and creative flow.
         </p>
 
-        <!-- Category Filters -->
         <div class="filter-wrapper">
           <div class="filter-scroll" id="categoryFilters" role="tablist" aria-label="Filter products by category">
             <button class="filter-pill active" data-category="all" role="tab" aria-selected="true">All Products</button>
@@ -127,7 +119,6 @@
       </div>
     </section>
 
-    <!-- Product Grid Section (Requirements 3, 4, 5) -->
     <section class="products-section" id="products">
       <div class="section-container">
         <div class="section-header">
@@ -138,9 +129,7 @@
           <span class="results-count" id="resultsCount">Showing 8 items</span>
         </div>
 
-        <!-- CSS Grid Container (Mobile: 1 Col, Tablet: 2 Col, Desktop: 4 Col) -->
         <div class="product-grid" id="productGrid">
-          <!-- Card 1: Wireless Mouse -->
           <article class="product-card" data-category="accessories" data-id="1">
             <div class="card-media">
               <span class="category-badge badge-accessories">Accessories</span>
@@ -173,7 +162,6 @@
             </div>
           </article>
 
-          <!-- Card 2: Mechanical Keyboard -->
           <article class="product-card" data-category="keyboards" data-id="2">
             <div class="card-media">
               <span class="category-badge badge-keyboards">Keyboards</span>
@@ -206,7 +194,6 @@
             </div>
           </article>
 
-          <!-- Card 3: ANC Headset -->
           <article class="product-card" data-category="audio" data-id="3">
             <div class="card-media">
               <span class="category-badge badge-audio">Audio</span>
@@ -239,7 +226,6 @@
             </div>
           </article>
 
-          <!-- Card 4: Smart Watch -->
           <article class="product-card" data-category="wearables" data-id="4">
             <div class="card-media">
               <span class="category-badge badge-wearables">Wearables</span>
@@ -272,7 +258,6 @@
             </div>
           </article>
 
-          <!-- Card 5: IPS QHD Display -->
           <article class="product-card" data-category="displays" data-id="5">
             <div class="card-media">
               <span class="category-badge badge-displays">Displays</span>
@@ -305,7 +290,6 @@
             </div>
           </article>
 
-          <!-- Card 6: StreamMic Pro -->
           <article class="product-card" data-category="audio" data-id="6">
             <div class="card-media">
               <span class="category-badge badge-audio">Audio</span>
@@ -338,7 +322,6 @@
             </div>
           </article>
 
-          <!-- Card 7: RGB Smart Desk Lamp -->
           <article class="product-card" data-category="lighting" data-id="7">
             <div class="card-media">
               <span class="category-badge badge-lighting">Lighting</span>
@@ -371,7 +354,6 @@
             </div>
           </article>
 
-          <!-- Card 8: Laptop Stand Riser -->
           <article class="product-card" data-category="accessories" data-id="8">
             <div class="card-media">
               <span class="category-badge badge-accessories">Accessories</span>
@@ -407,7 +389,6 @@
       </div>
     </section>
 
-    <!-- Why Choose VibeTech Highlights -->
     <section class="features-section" id="about">
       <div class="section-container">
         <div class="features-grid">
@@ -446,7 +427,6 @@
       </div>
     </section>
 
-    <!-- Deals Banner -->
     <section class="deals-section" id="deals">
       <div class="deals-banner">
         <div class="deals-content">
@@ -462,7 +442,6 @@
     </section>
   </main>
 
-  <!-- Footer Section -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-top">
@@ -511,22 +490,16 @@
     </div>
   </footer>
 
-  <!-- Quick View Modal -->
   <div class="modal-backdrop" id="quickViewModal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-window">
       <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
-      <div class="modal-content" id="modalContent">
-        <!-- Dynamically injected via script -->
-      </div>
+      <div class="modal-content" id="modalContent"></div>
     </div>
   </div>
 
-  <!-- Toast Notification Container -->
   <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-  <!-- Interactive Client-side Script -->
   <script>
-    // Products Data for Quick View & Search
     const productsData = {
       1: {
         name: "SwiftGlide Wireless Mouse",
@@ -610,7 +583,6 @@
       }
     };
 
-    // Mobile Navigation Drawer Toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
     if (mobileToggle && mobileDrawer) {
@@ -621,7 +593,6 @@
         mobileDrawer.classList.toggle('open');
       });
 
-      // Close mobile drawer when clicking any link
       document.querySelectorAll('.mobile-nav-link').forEach(link => {
         link.addEventListener('click', () => {
           mobileToggle.classList.remove('active');
@@ -631,7 +602,6 @@
       });
     }
 
-    // Exercises Dropdown Toggle for Touch
     const dropdownBtn = document.getElementById('dropdownBtn');
     if (dropdownBtn) {
       dropdownBtn.addEventListener('click', (e) => {
@@ -643,7 +613,6 @@
       });
     }
 
-    // Category Filtering
     const filterButtons = document.querySelectorAll('.filter-pill');
     const productCards = document.querySelectorAll('.product-card');
     const resultsCount = document.getElementById('resultsCount');
@@ -691,7 +660,6 @@
       }
     }
 
-    // Search inputs
     const searchInput = document.getElementById('searchInput');
     const mobileSearchInput = document.getElementById('mobileSearchInput');
 
@@ -703,23 +671,20 @@
       }
     });
 
-    // Cart Management & Interactive Feedback
     let cartTotal = 0;
     const cartCountEl = document.getElementById('cartCount');
 
     document.querySelectorAll('.btn-cart').forEach(button => {
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', () => {
         const name = button.getAttribute('data-name');
         const price = button.getAttribute('data-price');
         cartTotal++;
         cartCountEl.textContent = cartTotal;
 
-        // Visual feedback on cart badge
         cartCountEl.classList.remove('bump');
-        void cartCountEl.offsetWidth; // trigger reflow
+        void cartCountEl.offsetWidth;
         cartCountEl.classList.add('bump');
 
-        // Show Toast Notification
         showToast(`Added <strong>${name}</strong> ($${price}) to your cart!`);
       });
     });
@@ -746,13 +711,12 @@
       }, 3500);
     }
 
-    // Quick View Modal
     const modal = document.getElementById('quickViewModal');
     const modalContent = document.getElementById('modalContent');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
 
     document.querySelectorAll('.btn-quick-view').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', () => {
         const productId = btn.getAttribute('data-product');
         const data = productsData[productId];
         if (!data) return;
@@ -811,7 +775,6 @@
       if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
 
-    // Navbar Scroll Shadow Effect
     window.addEventListener('scroll', () => {
       const navbar = document.getElementById('navbar');
       if (window.scrollY > 20) {

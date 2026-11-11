@@ -1,13 +1,4 @@
-/* ==========================================================================
-   LAB 2: FIGMA-TO-CODE, LAYOUTS & RESPONSIVE DESIGN
-   VibeTech Responsive E-Commerce Landing Page
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   1. CSS Custom Properties / Design Tokens (Extracted from Figma)
-   -------------------------------------------------------------------------- */
 :root {
-  /* Colors */
   --color-primary: #6366f1;
   --color-primary-dark: #4f46e5;
   --color-primary-light: #e0e7ff;
@@ -30,16 +21,13 @@
   --color-warning: #f59e0b;
   --color-danger: #dc2626;
 
-  /* Glassmorphism Tokens */
   --glass-bg: rgba(255, 255, 255, 0.82);
   --glass-bg-hover: rgba(255, 255, 255, 0.95);
   --glass-border: rgba(226, 232, 240, 0.75);
   --glass-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
 
-  /* Typography */
   --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
-  /* Radii */
   --radius-xs: 4px;
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -47,21 +35,16 @@
   --radius-xl: 24px;
   --radius-full: 9999px;
 
-  /* Elevation Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
   --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 
-  /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* --------------------------------------------------------------------------
-   2. Reset & Base Styles
-   -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -100,9 +83,6 @@ button {
   cursor: pointer;
 }
 
-/* --------------------------------------------------------------------------
-   3. Top Announcement Bar (Lab Submission & Quick Nav)
-   -------------------------------------------------------------------------- */
 .announcement-bar {
   background-color: var(--color-dark);
   color: #f1f5f9;
@@ -153,9 +133,6 @@ button {
   color: #475569;
 }
 
-/* --------------------------------------------------------------------------
-   4. Sticky Glassmorphic Navbar (Requirement 2)
-   -------------------------------------------------------------------------- */
 .navbar {
   position: sticky;
   top: 0;
@@ -181,7 +158,6 @@ button {
   align-items: center;
 }
 
-/* Brand Logo */
 .brand-logo {
   display: flex;
   align-items: center;
@@ -210,7 +186,6 @@ button {
   color: var(--color-primary);
 }
 
-/* Desktop Navigation Links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -226,7 +201,6 @@ button {
   transition: all var(--transition-normal);
 }
 
-/* Glassmorphism hover transitions on navbar items */
 .nav-link:hover,
 .nav-link.active {
   color: var(--color-primary-dark);
@@ -235,7 +209,6 @@ button {
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
 }
 
-/* Exercises Dropdown in Navbar */
 .nav-dropdown {
   position: relative;
 }
@@ -304,7 +277,6 @@ button {
   }
 }
 
-/* Header Utilities & Action Buttons */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -347,7 +319,6 @@ button {
   color: var(--color-text-muted);
 }
 
-/* Cart Button */
 .cart-btn {
   position: relative;
   display: flex;
@@ -399,7 +370,6 @@ button {
   100% { transform: scale(1); }
 }
 
-/* Mobile Hamburger Button */
 .mobile-toggle {
   display: none;
   flex-direction: column;
@@ -436,7 +406,6 @@ button {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile Navigation Drawer */
 .mobile-drawer {
   display: none;
   background: rgba(255, 255, 255, 0.98);
@@ -513,9 +482,6 @@ button {
   padding: 0.25rem 1rem;
 }
 
-/* --------------------------------------------------------------------------
-   5. Hero Section (Figma Exact Headline, Subtitle, & Filters)
-   -------------------------------------------------------------------------- */
 .hero-section {
   padding: 4.5rem 1.5rem 2.5rem;
   text-align: center;
@@ -567,7 +533,6 @@ button {
   margin: 0 auto 2.5rem;
 }
 
-/* Category Filter Pills */
 .filter-wrapper {
   display: flex;
   justify-content: center;
@@ -613,10 +578,6 @@ button {
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
 }
 
-/* --------------------------------------------------------------------------
-   6. Product Grid Section (Requirements 3 & 4)
-   CSS Grid: Mobile (1 Col) -> Tablet (2 Col) -> Desktop (4 Col)
-   -------------------------------------------------------------------------- */
 .products-section {
   padding: 2.5rem 1.5rem 5rem;
 }
@@ -658,17 +619,12 @@ button {
   border: 1px solid var(--color-border);
 }
 
-/* Mobile-First Grid: 1 Column default */
 .product-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
-/* --------------------------------------------------------------------------
-   7. Product Card & Hover Effects (Requirement 5)
-   Image Zoom + Card Lift + Quick View Fade-In
-   -------------------------------------------------------------------------- */
 .product-card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -681,14 +637,12 @@ button {
   position: relative;
 }
 
-/* Card Hover Lift & Shadow Expansion */
 .product-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
   border-color: rgba(99, 102, 241, 0.35);
 }
 
-/* Card Media & Image Zoom */
 .card-media {
   position: relative;
   width: 100%;
@@ -704,12 +658,10 @@ button {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Image Zoom on Card Hover */
 .product-card:hover .card-media img {
   transform: scale(1.08);
 }
 
-/* Category Badge (Positioned top-left of image) */
 .category-badge {
   position: absolute;
   top: 0.875rem;
@@ -731,7 +683,6 @@ button {
 .badge-displays    { background-color: #faf5ff; color: #7e22ce; }
 .badge-lighting    { background-color: #fffbeb; color: #b45309; }
 
-/* Quick View Overlay Fade-in */
 .quick-view-overlay {
   position: absolute;
   inset: 0;
@@ -773,7 +724,6 @@ button {
   color: #ffffff;
 }
 
-/* Card Body */
 .card-body {
   padding: 1.25rem;
   display: flex;
@@ -816,7 +766,6 @@ button {
   flex-grow: 1;
 }
 
-/* Card Footer (Price & Add to Cart CTA) */
 .card-footer {
   display: flex;
   align-items: center;
@@ -868,11 +817,6 @@ button {
   transform: translateY(0);
 }
 
-/* --------------------------------------------------------------------------
-   8. Responsive Breakpoints (CSS Grid Multi-Column Scaling)
-   -------------------------------------------------------------------------- */
-
-/* Tablet Devices: 640px and up (2 Columns) */
 @media (min-width: 640px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -880,7 +824,6 @@ button {
   }
 }
 
-/* Small Desktop / Tablet Landscape: 768px and up */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -899,7 +842,6 @@ button {
   }
 }
 
-/* Desktop Devices: 1024px and up (4 Columns as per Figma Artboard) */
 @media (min-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -907,9 +849,6 @@ button {
   }
 }
 
-/* --------------------------------------------------------------------------
-   9. Features Highlights Section
-   -------------------------------------------------------------------------- */
 .features-section {
   background-color: #ffffff;
   border-top: 1px solid var(--color-border);
@@ -960,9 +899,6 @@ button {
   line-height: 1.5;
 }
 
-/* --------------------------------------------------------------------------
-   10. Deals Promo Banner
-   -------------------------------------------------------------------------- */
 .deals-section {
   padding: 4rem 1.5rem;
 }
@@ -1057,9 +993,6 @@ button {
   font-size: 0.95rem;
 }
 
-/* --------------------------------------------------------------------------
-   11. Footer Section
-   -------------------------------------------------------------------------- */
 .site-footer {
   background-color: var(--color-dark);
   color: #94a3b8;
@@ -1182,9 +1115,6 @@ button {
   color: #64748b;
 }
 
-/* --------------------------------------------------------------------------
-   12. Quick View Modal Styles
-   -------------------------------------------------------------------------- */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -1327,9 +1257,6 @@ button {
   padding: 0.85rem;
 }
 
-/* --------------------------------------------------------------------------
-   13. Toast Notification
-   -------------------------------------------------------------------------- */
 .toast-container {
   position: fixed;
   bottom: 1.5rem;
