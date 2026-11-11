@@ -3,57 +3,823 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab 2: Layouts & Responsive Design</title>
+  <title>VibeTech — Unleash the Next Level | Workspace Gear & Tech</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">MyBrand</div>
-    <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
-    <nav id="navMenu" class="nav-links">
-      <a href="#exercise1">Exercise 1</a>
-      <a href="#exercise2">Exercise 2</a>
-      <a href="exercise1.html">Ex1 Page</a>
-      <a href="exercise2.html">Ex2 Page</a>
-    </nav>
+  <!-- Top Announcement Bar for Lab 2 Navigation -->
+  <aside class="announcement-bar">
+    <div class="announcement-content">
+      <span class="badge-lab">Lab 2 Submission</span>
+      <span>Figma-to-Code Responsive Design</span>
+      <nav class="lab-links" aria-label="Lab Exercises">
+        <a href="exercise1.html">Exercise 1 (Grid Gallery)</a>
+        <span class="divider">/</span>
+        <a href="exercise2.html">Exercise 2 (Mobile Nav)</a>
+        <span class="divider">/</span>
+        <a href="exercise3.html">Exercise 3 (Portfolio)</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Sticky Glassmorphic Navbar (Requirement 2) -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" aria-label="VibeTech Home">
+        <img src="assets/logo.svg" alt="VibeTech Logo" class="logo-icon" width="36" height="36">
+        <span class="brand-name">Vibe<span class="brand-accent">Tech</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#deals" class="nav-link">Deals</a>
+        <a href="#about" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <button class="nav-link dropdown-toggle" aria-expanded="false" id="dropdownBtn">
+            Exercises <span class="arrow-down">▾</span>
+          </button>
+          <div class="dropdown-menu">
+            <a href="exercise1.html">Exercise 1: 2D Grid Gallery</a>
+            <a href="exercise2.html">Exercise 2: Mobile Nav</a>
+            <a href="exercise3.html">Exercise 3: Portfolio Grid</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Nav Utilities & Cart -->
+      <div class="nav-actions">
+        <div class="search-box">
+          <svg class="action-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Search gear..." aria-label="Search products">
+        </div>
+
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping Cart">
+          <svg class="action-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button (Requirement 2 & 4) -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <main class="main-wrapper">
-    <section id="exercise2" class="section-box">
-      <h2>Exercise 2: Interactive Mobile-First Navigation Menu</h2>
-      <p>The top navigation bar demonstrates mobile-first responsive design. Under 768px, the horizontal menu is hidden and the toggle button activates fluidly.</p>
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-search">
+      <input type="text" id="mobileSearchInput" placeholder="Search products..." aria-label="Mobile product search">
+    </div>
+    <nav class="mobile-nav-list">
+      <a href="#home" class="mobile-nav-link active">Home</a>
+      <a href="#products" class="mobile-nav-link">Products</a>
+      <a href="#deals" class="mobile-nav-link">Deals</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <div class="mobile-divider"></div>
+      <span class="mobile-section-title">Lab 2 Exercises</span>
+      <a href="exercise1.html" class="mobile-nav-link">Exercise 1: 2D Grid Gallery</a>
+      <a href="exercise2.html" class="mobile-nav-link">Exercise 2: Mobile Navigation</a>
+      <a href="exercise3.html" class="mobile-nav-link">Exercise 3: Portfolio Grid</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-container">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Figma Edition 2026 &bull; Workspace Collection</span>
+        </div>
+        <h1 class="hero-title">Unleash the Next Level</h1>
+        <p class="hero-subtitle">
+          Explore our curated collection of professional workspace gear, crafted to elevate your daily productivity and creative flow.
+        </p>
+
+        <!-- Category Filters -->
+        <div class="filter-wrapper">
+          <div class="filter-scroll" id="categoryFilters" role="tablist" aria-label="Filter products by category">
+            <button class="filter-pill active" data-category="all" role="tab" aria-selected="true">All Products</button>
+            <button class="filter-pill" data-category="accessories" role="tab" aria-selected="false">Accessories</button>
+            <button class="filter-pill" data-category="keyboards" role="tab" aria-selected="false">Keyboards</button>
+            <button class="filter-pill" data-category="audio" role="tab" aria-selected="false">Audio</button>
+            <button class="filter-pill" data-category="wearables" role="tab" aria-selected="false">Wearables</button>
+            <button class="filter-pill" data-category="displays" role="tab" aria-selected="false">Displays</button>
+            <button class="filter-pill" data-category="lighting" role="tab" aria-selected="false">Lighting</button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="exercise1" class="section-box">
-      <h2>Exercise 1: Two-Dimensional Image Gallery Layout</h2>
-      <p>CSS Grid layout with 4 items, 15px gap, and the first item spanning two column tracks.</p>
-      <div class="exercise-grid">
-        <div class="exercise-item item-1">
-          <img src="https://picsum.photos/seed/gallery1/800/400" alt="Item 1">
-          <div class="item-label">Item 1 (Spans 2 columns)</div>
+    <!-- Product Grid Section (Requirements 3, 4, 5) -->
+    <section class="products-section" id="products">
+      <div class="section-container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-desc">Precision-engineered hardware built for creators, designers, and developers.</p>
+          </div>
+          <span class="results-count" id="resultsCount">Showing 8 items</span>
         </div>
-        <div class="exercise-item">
-          <img src="https://picsum.photos/seed/gallery2/400/400" alt="Item 2">
-          <div class="item-label">Item 2</div>
+
+        <!-- CSS Grid Container (Mobile: 1 Col, Tablet: 2 Col, Desktop: 4 Col) -->
+        <div class="product-grid" id="productGrid">
+          <!-- Card 1: Wireless Mouse -->
+          <article class="product-card" data-category="accessories" data-id="1">
+            <div class="card-media">
+              <span class="category-badge badge-accessories">Accessories</span>
+              <img src="assets/mouse.webp" alt="SwiftGlide Wireless Mouse" loading="lazy">
+              <div class="quick-view-overlay">
+                <button class="btn-quick-view" data-product="1">Quick View</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="rating-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">4.9 (128)</span>
+              </div>
+              <h3 class="product-title">SwiftGlide Wireless Mouse</h3>
+              <p class="product-desc">Ultra-fast ergonomic wireless mouse with dynamic hyper-scroll and silent tactile switches.</p>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="current-price">$59.00</span>
+                  <span class="original-price">$79.00</span>
+                </div>
+                <button class="btn-cart" data-name="SwiftGlide Wireless Mouse" data-price="59.00" aria-label="Add SwiftGlide Wireless Mouse to cart">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Mechanical Keyboard -->
+          <article class="product-card" data-category="keyboards" data-id="2">
+            <div class="card-media">
+              <span class="category-badge badge-keyboards">Keyboards</span>
+              <img src="assets/keyboard.webp" alt="Tactix K85 Mechanical Keyboard" loading="lazy">
+              <div class="quick-view-overlay">
+                <button class="btn-quick-view" data-product="2">Quick View</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="rating-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">5.0 (256)</span>
+              </div>
+              <h3 class="product-title">Tactix K85 Mechanical</h3>
+              <p class="product-desc">Hot-swappable custom linear mechanical keyboard featuring per-key RGB and CNC aluminum body.</p>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="current-price">$129.00</span>
+                  <span class="original-price">$159.00</span>
+                </div>
+                <button class="btn-cart" data-name="Tactix K85 Mechanical" data-price="129.00" aria-label="Add Tactix K85 Mechanical to cart">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: ANC Headset -->
+          <article class="product-card" data-category="audio" data-id="3">
+            <div class="card-media">
+              <span class="category-badge badge-audio">Audio</span>
+              <img src="assets/headphones.webp" alt="ZenSound ANC Headset" loading="lazy">
+              <div class="quick-view-overlay">
+                <button class="btn-quick-view" data-product="3">Quick View</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="rating-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">4.8 (310)</span>
+              </div>
+              <h3 class="product-title">ZenSound ANC Headset</h3>
+              <p class="product-desc">Flagship hybrid active noise cancelling headphones with spatial lossless audio and 40h battery.</p>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="current-price">$189.00</span>
+                  <span class="original-price">$229.00</span>
+                </div>
+                <button class="btn-cart" data-name="ZenSound ANC Headset" data-price="189.00" aria-label="Add ZenSound ANC Headset to cart">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Smart Watch -->
+          <article class="product-card" data-category="wearables" data-id="4">
+            <div class="card-media">
+              <span class="category-badge badge-wearables">Wearables</span>
+              <img src="assets/smartwatch.webp" alt="NovaFit Smart Watch" loading="lazy">
+              <div class="quick-view-overlay">
+                <button class="btn-quick-view" data-product="4">Quick View</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="rating-row">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-score">4.7 (94)</span>
+              </div>
+              <h3 class="product-title">NovaFit Smart Watch</h3>
+              <p class="product-desc">Advanced biometric health monitor with bright AMOLED sapphire screen and multi-day battery.</p>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="current-price">$99.00</span>
+                  <span class="original-price">$129.00</span>
+                </div>
+                <button class="btn-cart" data-name="NovaFit Smart Watch" data-price="99.00" aria-label="Add NovaFit Smart Watch to cart">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: IPS QHD Display -->
+          <article class="product-card" data-category="displays" data-id="5">
+            <div class="card-media">
+              <span class="category-badge badge-displays">Displays</span>
+              <img src="assets/display.webp" alt="Horizon 27-inch IPS QHD Display" loading="lazy">
+              <div class="quick-view-overlay">
+                <button class="btn-quick-view" data-product="5">Quick View</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="rating-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">4.9 (176)</span>
+              </div>
+              <h3 class="product-title">Horizon 27" IPS QHD Display</h3>
+              <p class="product-desc">27-inch 165Hz QHD color-accurate workspace monitor with 99% DCI-P3 and USB-C 90W power delivery.</p>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="current-price">$299.00</span>
+                  <span class="original-price">$349.00</span>
+                </div>
+                <button class="btn-cart" data-name="Horizon 27\" IPS QHD Display" data-price="299.00" aria-label="Add Horizon Display to cart">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: StreamMic Pro -->
+          <article class="product-card" data-category="audio" data-id="6">
+            <div class="card-media">
+              <span class="category-badge badge-audio">Audio</span>
+              <img src="assets/microphone.webp" alt="StreamMic Pro Cardioid Microphone" loading="lazy">
+              <div class="quick-view-overlay">
+                <button class="btn-quick-view" data-product="6">Quick View</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="rating-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">4.8 (82)</span>
+              </div>
+              <h3 class="product-title">StreamMic Pro Cardioid</h3>
+              <p class="product-desc">Broadcast-grade USB-C cardioid condenser microphone with onboard DSP noise filtering and shockmount.</p>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="current-price">$149.00</span>
+                  <span class="original-price">$179.00</span>
+                </div>
+                <button class="btn-cart" data-name="StreamMic Pro Cardioid" data-price="149.00" aria-label="Add StreamMic Pro Cardioid to cart">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 7: RGB Smart Desk Lamp -->
+          <article class="product-card" data-category="lighting" data-id="7">
+            <div class="card-media">
+              <span class="category-badge badge-lighting">Lighting</span>
+              <img src="assets/lamp.webp" alt="Lumax RGB Smart Desk Lamp" loading="lazy">
+              <div class="quick-view-overlay">
+                <button class="btn-quick-view" data-product="7">Quick View</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="rating-row">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-score">4.7 (140)</span>
+              </div>
+              <h3 class="product-title">Lumax RGB Smart Desk Lamp</h3>
+              <p class="product-desc">Circadian auto-dimming LED desk bar with dual-zone ambient backlighting and touch slide controls.</p>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="current-price">$45.00</span>
+                  <span class="original-price">$59.00</span>
+                </div>
+                <button class="btn-cart" data-name="Lumax RGB Smart Desk Lamp" data-price="45.00" aria-label="Add Lumax Desk Lamp to cart">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 8: Laptop Stand Riser -->
+          <article class="product-card" data-category="accessories" data-id="8">
+            <div class="card-media">
+              <span class="category-badge badge-accessories">Accessories</span>
+              <img src="assets/laptop-stand.webp" alt="ErgoStand Aluminum Laptop Riser" loading="lazy">
+              <div class="quick-view-overlay">
+                <button class="btn-quick-view" data-product="8">Quick View</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="rating-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">4.9 (215)</span>
+              </div>
+              <h3 class="product-title">ErgoStand Aluminum Laptop Riser</h3>
+              <p class="product-desc">Precision CNC anodized aluminum workstation riser with integrated cable routing and silicone protection.</p>
+              <div class="card-footer">
+                <div class="price-tag">
+                  <span class="current-price">$69.00</span>
+                  <span class="original-price">$89.00</span>
+                </div>
+                <button class="btn-cart" data-name="ErgoStand Aluminum Laptop Riser" data-price="69.00" aria-label="Add ErgoStand Laptop Riser to cart">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="exercise-item">
-          <img src="https://picsum.photos/seed/gallery3/400/400" alt="Item 3">
-          <div class="item-label">Item 3</div>
+      </div>
+    </section>
+
+    <!-- Why Choose VibeTech Highlights -->
+    <section class="features-section" id="about">
+      <div class="section-container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <h3>Free Express Delivery</h3>
+            <p>Guaranteed 2-3 business day tracked shipping on all orders over $75.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3>2-Year Hardware Warranty</h3>
+            <p>Full comprehensive protection with immediate swap-out on technical defects.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>30-Day Risk-Free Trial</h3>
+            <p>Love your setup upgrade or return it in original condition for a 100% refund.</p>
+          </div>
         </div>
-        <div class="exercise-item">
-          <img src="https://picsum.photos/seed/gallery4/400/400" alt="Item 4">
-          <div class="item-label">Item 4</div>
+      </div>
+    </section>
+
+    <!-- Deals Banner -->
+    <section class="deals-section" id="deals">
+      <div class="deals-banner">
+        <div class="deals-content">
+          <span class="deals-tag">Limited Time Bundle</span>
+          <h2>The Complete Creator Desk Setup</h2>
+          <p>Get the Tactix K85 Keyboard, SwiftGlide Mouse, and ErgoStand Riser together and save 25% today.</p>
+          <div class="deals-actions">
+            <a href="#products" class="btn-primary">Shop The Bundle</a>
+            <span class="deal-saving">Save $64.00</span>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="assets/logo.svg" alt="VibeTech Logo" width="32" height="32">
+            <span class="brand-name">Vibe<span class="brand-accent">Tech</span></span>
+          </div>
+          <p class="brand-bio">
+            Bridging the gap between Figma design systems and modern responsive web interfaces.
+          </p>
+        </div>
+        <div class="footer-links-group">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#products">Keyboards</a></li>
+            <li><a href="#products">Audio & Mic</a></li>
+            <li><a href="#products">Ergonomics</a></li>
+            <li><a href="#products">Displays</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Lab 2 Exercises</h4>
+          <ul>
+            <li><a href="exercise1.html">Exercise 1: 2D Gallery</a></li>
+            <li><a href="exercise2.html">Exercise 2: Mobile Nav</a></li>
+            <li><a href="exercise3.html">Exercise 3: Portfolio</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub Repository</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Stay Updated</h4>
+          <p class="newsletter-desc">Receive exclusive workspace drops and hardware reviews.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing to VibeTech!');">
+            <input type="email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+            <button type="submit" class="btn-subscribe">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 VibeTech. Designed for Web Development Practice.</p>
+        <div class="footer-legal">
+          <span>Lab 2: Figma-to-Code &bull; Responsive CSS Grids</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quickViewModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-window">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-content" id="modalContent">
+        <!-- Dynamically injected via script -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Interactive Client-side Script -->
   <script>
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+    // Products Data for Quick View & Search
+    const productsData = {
+      1: {
+        name: "SwiftGlide Wireless Mouse",
+        category: "Accessories",
+        price: "$59.00",
+        originalPrice: "$79.00",
+        image: "assets/mouse.webp",
+        rating: "4.9 (128 reviews)",
+        specs: ["4000 DPI Optical Sensor", "Silent Tactile Micro-Switches", "Up to 70 Days Battery Life", "USB-C Fast Charging & Bluetooth 5.3"],
+        desc: "Designed for high-precision workflows, the SwiftGlide combines hand-crafted ergonomic contours with instantaneous optical tracking for long editing and coding sessions."
+      },
+      2: {
+        name: "Tactix K85 Mechanical",
+        category: "Keyboards",
+        price: "$129.00",
+        originalPrice: "$159.00",
+        image: "assets/keyboard.webp",
+        rating: "5.0 (256 reviews)",
+        specs: ["Hot-Swappable Gateron Switches", "Full CNC Anodized Aluminum Frame", "Per-Key RGB with VIA/QMK Support", "Triple Mode: 2.4Ghz, BT, Type-C"],
+        desc: "Tactix K85 sets a new standard for acoustic perfection and typing speed. Factory-lubed switches provide ultra-smooth keystrokes with satisfying thock."
+      },
+      3: {
+        name: "ZenSound ANC Headset",
+        category: "Audio",
+        price: "$189.00",
+        originalPrice: "$229.00",
+        image: "assets/headphones.webp",
+        rating: "4.8 (310 reviews)",
+        specs: ["Active Noise Cancelling -42dB", "Custom 40mm Titanium Drivers", "40-Hour Playback with Fast Fuel", "Multipoint Seamless Device Switching"],
+        desc: "Immerse into deep work without distractions. ZenSound eliminates coffee shop and office background noise while delivering pristine acoustic balance."
+      },
+      4: {
+        name: "NovaFit Smart Watch",
+        category: "Wearables",
+        price: "$99.00",
+        originalPrice: "$129.00",
+        image: "assets/smartwatch.webp",
+        rating: "4.7 (94 reviews)",
+        specs: ["1.78\" Always-On AMOLED Display", "Real-Time SpO2 & Heart Rate", "5ATM Water Resistance", "10-Day Typical Battery Life"],
+        desc: "Stay connected while managing your daily health and productivity routines. The NovaFit seamlessly displays priority notifications without digital clutter."
+      },
+      5: {
+        name: "Horizon 27\" IPS QHD Display",
+        category: "Displays",
+        price: "$299.00",
+        originalPrice: "$349.00",
+        image: "assets/display.webp",
+        rating: "4.9 (176 reviews)",
+        specs: ["2560x1440 QHD Fast-IPS Panel", "165Hz Refresh Rate & 1ms MPRT", "99% DCI-P3 Factory Calibrated", "USB-C 90W PD Single Cable Dock"],
+        desc: "Engineered specifically for creators and designers, Horizon offers stunning color uniformity, anti-glare matte coating, and a space-saving ergonomic stand."
+      },
+      6: {
+        name: "StreamMic Pro Cardioid",
+        category: "Audio",
+        price: "$149.00",
+        originalPrice: "$179.00",
+        image: "assets/microphone.webp",
+        rating: "4.8 (82 reviews)",
+        specs: ["24-bit / 96kHz Studio Resolution", "Cardioid Capsule & Internal Pop Filter", "Zero-Latency 3.5mm Headphone Jack", "Integrated Shockmount & Heavy Base"],
+        desc: "Deliver crystal-clear vocal presence in client calls, podcasts, and video conferences with zero software configuration required."
+      },
+      7: {
+        name: "Lumax RGB Smart Desk Lamp",
+        category: "Lighting",
+        price: "$45.00",
+        originalPrice: "$59.00",
+        image: "assets/lamp.webp",
+        rating: "4.7 (140 reviews)",
+        specs: ["Asymmetric Optics with Zero Screen Glare", "Adjustable 2700K - 6500K Temp", "Ambient Rear RGB Accent Glow", "Capacitive Smooth Slide Touch Bar"],
+        desc: "Protect your eyesight and illuminate your keyboard workspace while setting ambient background vibes with intelligent ambient lighting."
+      },
+      8: {
+        name: "ErgoStand Aluminum Laptop Riser",
+        category: "Accessories",
+        price: "$69.00",
+        originalPrice: "$89.00",
+        image: "assets/laptop-stand.webp",
+        rating: "4.9 (215 reviews)",
+        specs: ["Solid Aviation-Grade Aluminum", "Passive Thermal Airflow Cutouts", "Non-Slip Protective Silicone Pads", "Foldable Flat Travel Form Factor"],
+        desc: "Elevate your laptop screen to eye-level for healthy posture, reduced neck strain, and optimal machine cooling performance."
+      }
+    };
+
+    // Mobile Navigation Drawer Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileToggle && mobileDrawer) {
+      mobileToggle.addEventListener('click', () => {
+        const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+        mobileToggle.setAttribute('aria-expanded', !isExpanded);
+        mobileToggle.classList.toggle('active');
+        mobileDrawer.classList.toggle('open');
+      });
+
+      // Close mobile drawer when clicking any link
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggle.classList.remove('active');
+          mobileDrawer.classList.remove('open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Exercises Dropdown Toggle for Touch
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    if (dropdownBtn) {
+      dropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownBtn.closest('.nav-dropdown').classList.toggle('active');
+      });
+      document.addEventListener('click', () => {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
+      });
+    }
+
+    // Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-pill');
+    const productCards = document.querySelectorAll('.product-card');
+    const resultsCount = document.getElementById('resultsCount');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const category = btn.getAttribute('data-category');
+        filterGrid(category, currentSearchTerm);
+      });
+    });
+
+    let currentCategory = 'all';
+    let currentSearchTerm = '';
+
+    function filterGrid(category, search) {
+      currentCategory = category;
+      currentSearchTerm = search.toLowerCase().trim();
+      let visible = 0;
+
+      productCards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        const cardTitle = card.querySelector('.product-title').textContent.toLowerCase();
+        const cardDesc = card.querySelector('.product-desc').textContent.toLowerCase();
+
+        const matchesCat = (category === 'all' || cardCat === category);
+        const matchesSearch = (!currentSearchTerm || cardTitle.includes(currentSearchTerm) || cardDesc.includes(currentSearchTerm));
+
+        if (matchesCat && matchesSearch) {
+          card.style.display = 'flex';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (resultsCount) {
+        resultsCount.textContent = `Showing ${visible} item${visible === 1 ? '' : 's'}`;
+      }
+    }
+
+    // Search inputs
+    const searchInput = document.getElementById('searchInput');
+    const mobileSearchInput = document.getElementById('mobileSearchInput');
+
+    [searchInput, mobileSearchInput].forEach(input => {
+      if (input) {
+        input.addEventListener('input', (e) => {
+          filterGrid(currentCategory, e.target.value);
+        });
+      }
+    });
+
+    // Cart Management & Interactive Feedback
+    let cartTotal = 0;
+    const cartCountEl = document.getElementById('cartCount');
+
+    document.querySelectorAll('.btn-cart').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const name = button.getAttribute('data-name');
+        const price = button.getAttribute('data-price');
+        cartTotal++;
+        cartCountEl.textContent = cartTotal;
+
+        // Visual feedback on cart badge
+        cartCountEl.classList.remove('bump');
+        void cartCountEl.offsetWidth; // trigger reflow
+        cartCountEl.classList.add('bump');
+
+        // Show Toast Notification
+        showToast(`Added <strong>${name}</strong> ($${price}) to your cart!`);
+      });
+    });
+
+    function showToast(message) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `
+        <svg class="toast-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.add('toast-show');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.remove('toast-show');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // Quick View Modal
+    const modal = document.getElementById('quickViewModal');
+    const modalContent = document.getElementById('modalContent');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+    document.querySelectorAll('.btn-quick-view').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const productId = btn.getAttribute('data-product');
+        const data = productsData[productId];
+        if (!data) return;
+
+        modalContent.innerHTML = `
+          <div class="modal-grid">
+            <div class="modal-image-col">
+              <img src="${data.image}" alt="${data.name}" class="modal-img">
+            </div>
+            <div class="modal-info-col">
+              <span class="category-badge badge-${data.category.toLowerCase()}">${data.category}</span>
+              <h2>${data.name}</h2>
+              <div class="rating-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">${data.rating}</span>
+              </div>
+              <div class="modal-price">
+                <span class="modal-current-price">${data.price}</span>
+                <span class="modal-original-price">${data.originalPrice}</span>
+              </div>
+              <p class="modal-desc">${data.desc}</p>
+              <ul class="modal-specs">
+                ${data.specs.map(s => `<li>✓ ${s}</li>`).join('')}
+              </ul>
+              <button class="btn-primary modal-cart-btn" onclick="addToCartFromModal('${data.name}', '${data.price}')">
+                Add to Cart &bull; ${data.price}
+              </button>
+            </div>
+          </div>
+        `;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    window.addToCartFromModal = function(name, price) {
+      cartTotal++;
+      cartCountEl.textContent = cartTotal;
+      cartCountEl.classList.add('bump');
+      showToast(`Added <strong>${name}</strong> to your cart!`);
+      closeModal();
+    };
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    // Navbar Scroll Shadow Effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
   </script>
 </body>
 </html>
